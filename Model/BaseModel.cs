@@ -24,12 +24,6 @@ namespace Com.Xterr.MongoDbRepositories.Model
         [BsonRepresentation(BsonType.ObjectId)]
         public virtual string Id { get; set; }
 
-        /// <summary>
-        /// Gets or sets the version which is use to manage schema update
-        /// </summary>
-        /// <value>The version.</value>
-        public abstract string Version { get; set; }
-
         [BsonDateTimeOptions(Representation = BsonType.Document, Kind = DateTimeKind.Utc)]
         public DateTime? Timestamp { get; set; }
 
