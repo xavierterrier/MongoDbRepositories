@@ -104,7 +104,7 @@ namespace Com.Xterr.MongoDbRepositories
         /// <param name="model"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
-        protected T Create(T model, string userId)
+        public T Create(T model, string userId)
         {
             if (!_acl.CanCreate(model, userId))
             {
@@ -142,7 +142,7 @@ namespace Com.Xterr.MongoDbRepositories
         /// <param name="model"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
-        protected T Update(T model, string userId)
+        public T Update(T model, string userId)
         {
             var errors = model.Validate(CrudEnum.Update, false);
             if (errors.HasErrors())
@@ -200,7 +200,7 @@ namespace Com.Xterr.MongoDbRepositories
         /// </summary>
         /// <param name="id"></param>
         /// <param name="userId"></param>
-        protected void Delete(string id, string userId)
+        public void Delete(string id, string userId)
         {
 
             if (!_acl.CanWrite(entityId: id, userId: userId))
